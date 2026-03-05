@@ -20,7 +20,7 @@ export default function AdminTopbar({ logout, admin,toggleSidebar }) {
 
   return (
     <header
-      className="sticky top-0 z-30 flex items-center justify-between px-6 lg:px-8 h-16"
+      className="sticky top-0 z-30 flex items-center justify-between px-4 max-sm:px-3 lg:px-8 h-16"
       style={{
         background: "rgba(8,12,26,0.97)",
         borderBottom: "1px solid rgba(255,255,255,0.07)",

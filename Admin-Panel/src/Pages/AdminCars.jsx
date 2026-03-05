@@ -120,16 +120,16 @@ const handleAddCar = async (e) => {
 
       {/* HEADER CENTERED */}
       <div className="flex justify-between items-center text-center mb-10">
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-4 max-sm:mb-0">
           <Car size={28} className="text-orange-400" />
-          <h1 className="text-3xl font-bold tracking-wide">
+          <h1 className="text-3xl max-sm:text-[18px] font-bold tracking-wide">
             Manage Cars
           </h1>
         </div>
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-500 px-8 py-3 rounded-full hover:scale-105 transition-all shadow-xl cursor-pointer"
+          className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-500 px-8 max-sm:px-4 py-3 max-sm:py-2 rounded-full hover:scale-105 transition-all shadow-xl cursor-pointer"
         >
           <Plus size={18} /> Add New Car
         </button>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import { motion } from "framer-motion";
 
 export default function AdminContacts() {
@@ -12,7 +12,7 @@ export default function AdminContacts() {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:1005/api/contact");
+      const res = await axios.get("/contact");
       setContacts(res.data);
     } finally {
       setLoading(false);
@@ -28,7 +28,7 @@ export default function AdminContacts() {
   };
 
   return (
-    <div className="min-h-screen px-3 py-2 relative overflow-hidden">
+    <div className="min-h-screen px-2 py-1 relative overflow-hidden">
 
       {/* Ambient glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C9A84C]/5 rounded-full blur-3xl pointer-events-none" />
@@ -44,23 +44,48 @@ export default function AdminContacts() {
           className="mb-10"
         >
           
-          <div className="flex items-end justify-between gap-4 flex-wrap">
-            <h1 className="text-3xl sm:text-4xl font-black text-white flex items-center gap-3">
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.2)]">
-                <svg className="w-5 h-5 text-[#C9A84C]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-              </span>
-              Contact Enquiries
-            </h1>
-            <div className="flex items-center gap-2 bg-white/[0.05] border border-white/[0.08] px-4 py-2 rounded-xl">
-              <svg className="w-4 h-4 text-[#C9A84C]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-              <span className="text-white font-bold text-sm">{contacts.length}</span>
-              <span className="text-gray-500 text-xs">Total</span>
-            </div>
-          </div>
+          <div className="flex items-center justify-between gap-4">
+  
+  <h1 className="text-3xl max-sm:text-[16px] sm:text-4xl font-black text-white flex items-center gap-3">
+    <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.2)]">
+      <svg
+        className="w-5 h-5 text-[#C9A84C]"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
+      </svg>
+    </span>
+
+    Contact Enquiries
+  </h1>
+
+  <div className="flex items-center gap-2 bg-white/[0.05] border border-white/[0.08] px-4 py-2 rounded-xl shrink-0">
+    <svg
+      className="w-4 h-4 text-[#C9A84C]"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+      />
+    </svg>
+
+    <span className="text-white font-bold text-sm">{contacts.length}</span>
+    <span className="text-gray-500 text-xs">Total</span>
+  </div>
+
+</div>
         </motion.div>
 
         {/* Loading */}

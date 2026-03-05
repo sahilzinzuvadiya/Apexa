@@ -41,7 +41,7 @@ export default function AdminLayout() {
   }, [sidebarOpen]);
 
   return (
-    <div className="flex min-h-screen bg-[#080c1a] overflow-x-hidden">
+    <div className="flex w-full min-h-screen bg-[#080c1a] overflow-x-hidden">
 
       {/* ================= DESKTOP SIDEBAR ================= */}
       <Sidebar />
@@ -62,9 +62,9 @@ export default function AdminLayout() {
 
             {/* Slide Sidebar */}
             <motion.div
-              initial={{ x: -260 }}
+              initial={{ x: -256 }}
               animate={{ x: 0 }}
-              exit={{ x: -260 }}
+              exit={{ x: -256 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="fixed top-0 left-0 h-full z-50 lg:hidden shadow-2xl"
             >

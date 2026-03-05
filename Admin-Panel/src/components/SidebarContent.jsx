@@ -30,7 +30,7 @@ export default function SidebarContent({ onClose, mobile }) {
   <img
     src="/logo.png"
     alt="Logo"
-    className="h-12 mt-1 object-contain md:h-14 lg:h-15 ml-10"
+    className="h-12 mt-1 object-contain md:h-14 lg:h-15"
   />
 
   {/* CLOSE BUTTON - RIGHT (ONLY MOBILE) */}
