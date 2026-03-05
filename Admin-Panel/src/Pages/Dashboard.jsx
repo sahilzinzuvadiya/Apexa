@@ -22,7 +22,7 @@ export default function AdminDashboard() {
   }, []);
 
   const fetchDashboard = async () => {
-    const res = await axios.get("http://localhost:1005/api/dashboard");
+    const res = await axios.get("https://apexa.onrender.com/api/dashboard");
     setData(res.data);
   };
 
