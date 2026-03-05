@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import { motion } from "framer-motion";
 import {
   Chart as ChartJS,
@@ -22,7 +22,7 @@ export default function AdminDashboard() {
   }, []);
 
   const fetchDashboard = async () => {
-    const res = await axios.get("https://apexa.onrender.com/api/dashboard");
+    const res = await axios.get("/dashboard");
     setData(res.data);
   };
 
