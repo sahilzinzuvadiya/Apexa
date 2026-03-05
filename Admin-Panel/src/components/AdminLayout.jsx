@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Sidebar from "./Sidebar";
 import SidebarContent from "./SidebarContent";
-import Topbar from "./topbar";
+import AdminTopbar from "./AdminTopbar";
+
 
 export default function AdminLayout() {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ export default function AdminLayout() {
       {/* ================= MAIN AREA ================= */}
       <div className="flex-1 flex flex-col md:ml-64">
         {/* Topbar */}
-        <Topbar
+        <AdminTopbar
           logout={logout}
           admin={admin}
           toggleSidebar={() => setSidebarOpen(true)}

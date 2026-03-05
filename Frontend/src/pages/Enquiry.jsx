@@ -16,7 +16,7 @@ export default function Enquiry() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:1005/api/booking", {
+      await axios.post("https://apexa.onrender.com/api/booking", {
         ...form,
         carId: car._id,
         carName: car.name,
@@ -76,7 +76,7 @@ export default function Enquiry() {
             {car?.image && (
               <div className="mt-5 rounded-2xl overflow-hidden h-36">
                 <img
-                  src={`http://localhost:1005${car.image}`}
+                  src={`https://apexa.onrender.com${car.image}`}
                   alt={car.name}
                   className="w-full h-full object-cover"
                 />

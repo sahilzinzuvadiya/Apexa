@@ -110,7 +110,7 @@ export default function ContactUs() {
     }
 
     try {
-      await axios.post("http://localhost:1005/api/contact", form);
+      await axios.post("https://apexa.onrender.com/api/contact", form);
 
       setSubmitted(true);
       setForm({ name: "", phone: "", from: "", tour: "", message: "" });

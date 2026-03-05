@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Topbar({ logout, admin,toggleSidebar }) {
+export default function AdminTopbar({ logout, admin,toggleSidebar }) {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
