@@ -28,7 +28,7 @@ export default function AdminCars() {
     imageFile: null,
   });
 
-  const API_BASE = "http://localhost:1005";
+  const API_BASE = "https://apexa.onrender.com";
 
   const fetchCars = async () => {
     const res = await axios.get("/cars", {

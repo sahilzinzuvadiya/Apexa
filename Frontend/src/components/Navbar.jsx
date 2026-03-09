@@ -140,7 +140,7 @@ export default function Navbar() {
           >
             <div className="flex justify-between items-center mb-10">
               <NavLink to="/" onClick={handleClose}>
-                <img src="/logo.png" className="h-10" alt="Logo" />
+                <img src="/logo4.png" className="h-10" alt="Logo" />
               </NavLink>
               <button onClick={handleClose}>
                 <X size={24} />
@@ -165,7 +165,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <button className="w-full bg-orange-500 text-white py-3 rounded-full mt-6">
+            <button onClick={handleclick} className="w-full bg-orange-500 text-white py-3 rounded-full mt-6">
               Book Now
             </button>
           </div>
