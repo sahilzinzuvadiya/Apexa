@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* LEFT LOGO */}
           <div className="flex items-center md:w-[120px] lg:w-[140px]">
             <NavLink to="/">
-              <img src="/logo.png" className="h-15" />
+              <img src="/logo4.png" className="h-20 mt-2" />
             </NavLink>
           </div>
 

@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { motion, AnimatePresence } from "framer-motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -83,6 +83,10 @@ function FAQItem({ faq, i }) {
 export default function ContactUs() {
   const [form, setForm] = useState({ name: "", phone: "", from: "", tour: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+      const [showWhatsApp, setShowWhatsApp] = useState(false);
+  const message = encodeURIComponent(
+  "Hello, I want to book a ride with Apexa Travels."
+);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -371,12 +375,13 @@ export default function ContactUs() {
             📞 93162 74668 &nbsp;|&nbsp; 73599 40299
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a href="https://wa.me/919316274668" target="_blank" rel="noreferrer" className="no-underline">
-              <button className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 hover:-translate-y-0.5"
-                style={{ background: "#25D366", color: "#fff", border: "none" }}>
-                💬 WhatsApp Now
-              </button>
-            </a>
+             <button
+              onClick={() => setShowWhatsApp(true)}
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 hover:-translate-y-0.5"
+              style={{ background: "#25D366", color: "#fff", border: "none" }}
+            >
+              💬 WhatsApp Now
+            </button>
             <a
               href="tel:+919316274668"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 hover:-translate-y-0.5 no-underline"
@@ -387,7 +392,65 @@ export default function ContactUs() {
           </div>
         </motion.div>
       </section>
+            <AnimatePresence>
+  {showWhatsApp && (
+    <motion.div
+      className="fixed inset-0 flex items-center justify-center z-50 bg-black/40 backdrop-blur-md"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
 
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0, y: 40 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.8, opacity: 0, y: 40 }}
+        transition={{ duration: 0.35 }}
+        className="relative w-[320px] bg-white rounded-2xl shadow-2xl p-8 text-center"
+      >
+
+        {/* Close Button */}
+        <button
+          onClick={() => setShowWhatsApp(false)}
+          className="absolute top-3 right-3 text-gray-400 hover:text-black text-xl"
+        >
+          ✕
+        </button>
+
+        <h3 className="text-xl font-bold mb-6">
+          Contact on WhatsApp
+        </h3>
+
+        <div className="flex flex-col gap-4">
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={`https://wa.me/919316274668?text=${message}`}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-[#25D366] text-white py-3 rounded-xl font-semibold shadow-md"
+          >
+            📱 93162 74668
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={`https://wa.me/917359940299?text=${message}`}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-[#25D366] text-white py-3 rounded-xl font-semibold shadow-md"
+          >
+            📱 73599 40299
+          </motion.a>
+
+        </div>
+
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
     </div>
   );
