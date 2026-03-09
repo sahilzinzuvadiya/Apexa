@@ -28,7 +28,7 @@ export default function SidebarContent({ onClose, mobile }) {
 
   {/* LOGO - LEFT */}
   <img
-    src="/logo.png"
+    src="/logo4.png"
     alt="Logo"
     className="h-12 mt-1 object-contain md:h-14 lg:h-15"
   />
