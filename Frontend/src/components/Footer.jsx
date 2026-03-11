@@ -67,23 +67,48 @@ export default function Footer() {
 
               {/* Social icons */}
               <div className="flex items-center gap-3 mt-5">
-                {[
-                  { label: "Facebook", d: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
-                  { label: "Instagram", d: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z" },
-                  { label: "Twitter", d: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" },
-                ].map((s) => (
-                  <button key={s.label}
-                    className="w-8 h-8 rounded-lg bg-white/[0.05] hover:bg-yellow-400/10 
-                               flex items-center justify-center
-                               text-gray-500 hover:text-yellow-400
-                               transition-all duration-200"
-                  >
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d={s.d} />
-                    </svg>
-                  </button>
-                ))}
-              </div>
+  {[
+    {
+      label: "Facebook",
+      link: "https://www.facebook.com/haresh.giri.meghnathi",
+      icon: (
+        <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.3 0-1.7.8-1.7 1.6V12H17l-.4 3h-2.6v7A10 10 0 0022 12z" />
+      ),
+    },
+    {
+      label: "Instagram",
+      link: "https://www.instagram.com/apexaturandtravelas4590",
+      icon: (
+        <>
+          <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="1.5"></circle>
+        </>
+      ),
+    },
+  ].map((s) => (
+    <a
+      key={s.label}
+      href={s.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 rounded-lg bg-white/[0.05] hover:bg-yellow-400/10 
+                 flex items-center justify-center
+                 text-gray-400 hover:text-yellow-400
+                 transition-all duration-200"
+    >
+      <svg
+        className="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        {s.icon}
+      </svg>
+    </a>
+  ))}
+</div>
             </div>
 
             {/* Quick Links */}
@@ -135,11 +160,11 @@ export default function Footer() {
                   },
                   {
                     icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-                    text: "info@apexatravels.com"
+                    text: " hareshgirimeghnathi7479@gmai.com"
                   },
                   {
                     icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
-                    text: "Gir, Gujarat, India"
+                    text: "Near by dax resort ,sasan"
                   },
                 ].map((item) => (
                   <li key={item.text} className="flex items-start gap-3">
