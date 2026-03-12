@@ -22,6 +22,8 @@ const tours = [
   "Diu Sightseeing",
   "Jamjir Waterfall",
   "Kankai Mandir",
+  "Porbandar",
+  "Dwarka",
   "Custom Tour",
 ];
 
